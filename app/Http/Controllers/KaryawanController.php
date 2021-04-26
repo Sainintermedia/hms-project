@@ -16,7 +16,14 @@ class KaryawanController extends Controller
      */
     public function index()
     {
-        $Karya = DB::table('karyawan')->get();
+        $Karya = DB::table('karyawan as a')
+        ->join('jabatan as b','a.kode_jabatan','=','b.kode_jabatan')
+        ->join('departemen as c','a.kode_departemen','=','c.kode_departemen')
+        ->join('cabang as d','a.kode_cabang','=','d.kode_cabang')
+        ->select('a.id','a.nomor_induk','a.nama', 'a.tempat_lahir', 'a.tanggal_lahir', 'a.jenis_kelamin', 'a.agama', 'a.status_pernikahan', 'a.jumlah_anak', 
+        'a.alamat','a.nomor_telepon','a.pendidikan_terakhir', 'd.nama_cabang', 'b.nama_jabatan',
+         'c.nama_departemen','a.gaji_pokok','a.tanggal_diangkat','a.tanggal_keluar','a.nama_bank','a.nomor_rekening','a.rekening_atas_nama','a.created_at')
+        ->get();
         return view('MasterData.Karyawan.karyawan', compact('Karya'));
 
     }

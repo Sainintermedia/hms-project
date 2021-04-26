@@ -110,9 +110,9 @@
 													<td>{{$kry->alamat}}</td>
 													<td>{{$kry->nomor_telepon}}</td>
 													<td>{{$kry->pendidikan_terakhir}}</td>
-													<td>{{$kry->kode_jabatan}}</td>
-													<td>{{$kry->kode_cabang}}</td>
-													<td>{{$kry->kode_departemen}}</td>
+													<td>{{$kry->nama_jabatan}}</td>
+													<td>{{$kry->nama_cabang}}</td>
+													<td>{{$kry->nama_departemen}}</td>
 													<td>{{$kry->gaji_pokok}}</td>
 													<td>{{$kry->tanggal_diangkat}}</td>
 													<td>{{$kry->tanggal_keluar}}</td>
