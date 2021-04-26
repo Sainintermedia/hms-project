@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Gaji;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Karyawan;
+use App\Models\Options;
+use App\Models\Cabang;
+use App\Models\Departemen;
+use App\Models\Jabatan;
+
 
 class GajiController extends Controller
 {
@@ -28,13 +34,26 @@ class GajiController extends Controller
     {
         $Bulan = bulan(date('Y-m-d'));
         $Tahun = tahun(date('Y-m-d'));
+        $Option = DB::table('options')->first();
         $Gj = DB::table('karyawan as a')
         ->join('cabang as b', 'a.kode_cabang', '=', 'b.kode_cabang')
         ->join('jabatan as c','a.kode_jabatan','=','c.kode_jabatan')
         ->join('departemen as d','a.kode_departemen','=','d.kode_departemen')
-        ->select('a.nomor_induk','a.nama', 'a.nama_bank', 'a.nomor_rekening', 'a.rekening_atas_nama','b.nama_cabang','b.uang_makan','c.nama_jabatan','a.gaji_pokok','c.tunjangan_jabatan','d.nama_departemen')
+        ->select(
+            'a.nomor_induk',
+            'a.nama',
+            'a.nama_bank',
+            'a.nomor_rekening',
+            'a.rekening_atas_nama',
+            'b.nama_cabang',
+            'b.uang_makan',
+            'c.nama_jabatan',
+            'a.gaji_pokok',
+            'c.tunjangan_jabatan',
+            'd.nama_departemen',
+            )
         ->get();
-        return view ('Transaksi.Gaji.tambahgaji', compact ('Gj','Bulan','Tahun'));
+        return view ('Transaksi.Gaji.tambahgaji', compact ('Gj','Bulan','Tahun','Option'));
     }
 
     /**
