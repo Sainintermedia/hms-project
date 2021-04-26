@@ -270,7 +270,7 @@
 				@if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#std">
-						<i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+						<i class="fa fa-archive" aria-hidden="true"></i>
 						<p>Data Standar</p>
 						<span class="caret"></span>
 					</a>
