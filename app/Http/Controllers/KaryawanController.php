@@ -91,7 +91,8 @@ class KaryawanController extends Controller
      */
     public function show(Karyawan $karyawan)
     {
-        //
+        $karyawan= karyawan::find($id);
+        return view('MasterData.Karyawan.show', compact('karyawan'));
     }
 
     /**
