@@ -8,16 +8,10 @@ use App\Models\Gaji;
 use App\Models\karyawan;
 use App\Models\User;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-
-=======
-use Illuminate\Support\Facades\DB;
-use App\Models\Karyawan;
 use App\Models\Options;
 use App\Models\Cabang;
 use App\Models\Departemen;
 use App\Models\Jabatan;
->>>>>>> c91b96d860a2bc15dc5f174d9cb2a55cdd34c2e1
 
 
 class GajiController extends Controller
