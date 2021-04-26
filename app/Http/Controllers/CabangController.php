@@ -16,7 +16,7 @@ class CabangController extends Controller
     public function index()
     {
         $Caba = DB::table('cabang')->get();
-        return view ('MasterData.DataCabang.cabang', compact ('Caba'));
+        return view ('MasterData.Cabang.cabang', compact ('Caba'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CabangController extends Controller
      */
     public function create()
     {
-        return view ('MasterData.DataCabang.tambahcabang');
+        return view ('MasterData.Cabang.tambahcabang');
     }
 
     /**
@@ -69,7 +69,7 @@ class CabangController extends Controller
     public function edit($id)
     {
         $cab = Cabang::find($id);
-        return view ('MasterData.DataCabang.editcabang', compact('cab'));
+        return view ('MasterData.Cabang.editcabang', compact('cab'));
     }
 
     /**

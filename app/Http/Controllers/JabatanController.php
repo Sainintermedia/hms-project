@@ -16,7 +16,7 @@ class JabatanController extends Controller
     public function index()
     {
         $Jab = DB::table('jabatan')->get();
-        return view('MasterData.DataJabatan.jabatan', compact('Jab'));
+        return view('MasterData.Jabatan.jabatan', compact('Jab'));
     }
 
     /**
@@ -26,7 +26,7 @@ class JabatanController extends Controller
      */
     public function create()
     {
-        return view('MasterData.DataJabatan.tambahjabatan');
+        return view('MasterData.Jabatan.tambahjabatan');
     }
 
     /**
@@ -70,7 +70,7 @@ class JabatanController extends Controller
     public function edit($id)
     {
         $jaba = Jabatan::find($id);
-        return view('MasterData.DataJabatan.editjabatan',compact('jaba'));
+        return view('MasterData.Jabatan.editjabatan',compact('jaba'));
     }
 
     /**

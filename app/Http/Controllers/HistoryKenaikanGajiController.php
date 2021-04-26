@@ -16,7 +16,7 @@ class HistoryKenaikanGajiController extends Controller
     public function index()
     {
         $Historykg = DB::table('history_kenaikan_gaji')->get();
-        return view('MasterData.DataHistoryKenaikanGaji.historykenaikangaji', compact('Historykg'));
+        return view('MasterData.HistoryKenaikanGaji.historykenaikangaji', compact('Historykg'));
     }
     /**
      * Show the form for creating a new resource.
@@ -25,7 +25,7 @@ class HistoryKenaikanGajiController extends Controller
      */
     public function create()
     {
-        return view('MasterData.DataHistoryKenaikanGaji.tambahhistorykenaikangaji');
+        return view('MasterData.HistoryKenaikanGaji.tambahhistorykenaikangaji');
     }
 
     /**
@@ -72,7 +72,7 @@ class HistoryKenaikanGajiController extends Controller
     {
 
         $his = HistoryKenaikanGaji::find($id);
-        return view('MasterData.DataHistoryKenaikanGaji.edithistorykenaikangaji',compact('his'));
+        return view('MasterData.HistoryKenaikanGaji.edithistorykenaikangaji',compact('his'));
     }
 
     /**

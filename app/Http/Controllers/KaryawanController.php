@@ -17,7 +17,7 @@ class KaryawanController extends Controller
     public function index()
     {
         $Karya = DB::table('karyawan')->get();
-        return view('MasterData.DataKaryawan.karyawan', compact('Karya'));
+        return view('MasterData.Karyawan.karyawan', compact('Karya'));
     }
 
     /**
@@ -27,7 +27,7 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        return view('MasterData.DataKaryawan.tambahkaryawan');
+        return view('MasterData.Karyawan.tambahkaryawan');
     }
 
     /**
@@ -87,7 +87,7 @@ class KaryawanController extends Controller
     public function edit($id)
     {
         $kar = Karyawan::find($id);
-        return view('MasterData.DataKaryawan.editkaryawan',compact('kar'));
+        return view('MasterData.Karyawan.editkaryawan',compact('kar'));
     }
 
     /**

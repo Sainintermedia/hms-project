@@ -16,7 +16,7 @@ class DepartemenController extends Controller
     public function index()
     {
         $Depa = DB::table('departemen')->get();
-        return view('MasterData.DataDepartemen.departemen', compact('Depa'));
+        return view('MasterData.Departemen.departemen', compact('Depa'));
     }
 
     /**
@@ -26,7 +26,7 @@ class DepartemenController extends Controller
      */
     public function create()
     {
-        return view ('MasterData.DataDepartemen.tambahdepartemen');
+        return view ('MasterData.Departemen.tambahdepartemen');
     }
 
     /**
@@ -69,7 +69,7 @@ class DepartemenController extends Controller
     {
 
         $dep = Departemen::find($id);
-        return view('MasterData.Datadepartemen.editdepartemen',compact('dep'));
+        return view('MasterData.Departemen.editdepartemen',compact('dep'));
     }
     /**
      * Update the specified resource in storage.
