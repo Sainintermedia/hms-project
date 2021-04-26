@@ -18,6 +18,7 @@ class KaryawanController extends Controller
     {
         $Karya = DB::table('karyawan')->get();
         return view('MasterData.Karyawan.karyawan', compact('Karya'));
+
     }
 
     /**
@@ -27,7 +28,15 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        return view('MasterData.Karyawan.tambahkaryawan');
+        $jab = DB::table('jabatan')->get();
+
+        $cab = DB::table('cabang')->get();
+
+        $dep = DB::table('departemen')->get();
+
+        $nomor_induk = autonumber('karyawan','nomor_induk','NK-');
+
+        return view('MasterData.Karyawan.tambahkaryawan', compact ('jab','cab','dep','nomor_induk'));
     }
 
     /**

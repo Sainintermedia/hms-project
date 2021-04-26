@@ -26,7 +26,8 @@ class DepartemenController extends Controller
      */
     public function create()
     {
-        return view ('MasterData.Departemen.tambahdepartemen');
+        $kode_departemen = autonumber('departemen','kode_departemen','D-');
+        return view ('MasterData.Departemen.tambahdepartemen', compact('kode_departemen'));
     }
 
     /**

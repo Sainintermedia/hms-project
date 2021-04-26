@@ -38,7 +38,7 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Kode Cabang</label>
-                                    <input id="kode_cabang" type="text" class="form-control" placeholder="Input Kode Cabang" @error('kode_cabang') is-invalid @enderror name="kode_cabang" value="{{ old('kode_cabang') }}">
+                                    <input id="kode_cabang" type="text" class="form-control" placeholder="Input Kode Cabang" @error('kode_cabang') is-invalid @enderror name="kode_cabang" value="{{ $kode_cabang }}">
                                     @error('kode_cabang')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
