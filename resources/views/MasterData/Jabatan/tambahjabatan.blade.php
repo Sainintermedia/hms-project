@@ -38,7 +38,7 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Kode Jabatan</label>
-                                    <input id="kode_jabatan" type="text" class="form-control" placeholder="Input Kode Jabatan" @error('kode_jabatan') is-invalid @enderror name="kode_jabatan" value="{{ old('kode_jabatan') }}">
+                                    <input id="kode_jabatan" type="text" class="form-control" placeholder="Input Kode Jabatan" @error('kode_jabatan') is-invalid @enderror name="kode_jabatan" value="{{ $kode_jabatan }}" readonly>
                                     @error('kode_jabatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 

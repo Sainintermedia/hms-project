@@ -38,7 +38,7 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Kode Departemen</label>
-                                    <input id="kode_departemen" type="text" class="form-control" placeholder="Input Kode Departemen" @error('kode_departemen') is-invalid @enderror name="kode_departemen" value="{{ old('kode_departemen') }}">
+                                    <input id="kode_departemen" type="text" class="form-control" placeholder="Input Kode Departemen" @error('kode_departemen') is-invalid @enderror name="kode_departemen" value="{{ $kode_departemen }}">
                                     @error('kode_departemen')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 

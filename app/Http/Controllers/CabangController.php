@@ -26,7 +26,8 @@ class CabangController extends Controller
      */
     public function create()
     {
-        return view ('MasterData.Cabang.tambahcabang');
+        $kode_cabang = autonumber('cabang','kode_cabang','C-');
+        return view ('MasterData.Cabang.tambahcabang', compact ('kode_cabang'));
     }
 
     /**

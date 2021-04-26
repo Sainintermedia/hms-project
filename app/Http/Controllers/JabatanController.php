@@ -26,7 +26,8 @@ class JabatanController extends Controller
      */
     public function create()
     {
-        return view('MasterData.Jabatan.tambahjabatan');
+        $kode_jabatan = autonumber('jabatan','kode_jabatan','J-');
+        return view('MasterData.Jabatan.tambahjabatan', compact ('kode_jabatan'));
     }
 
     /**

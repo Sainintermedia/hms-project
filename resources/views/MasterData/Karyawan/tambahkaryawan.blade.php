@@ -38,7 +38,7 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Nomor Induk</label>
-                                    <input id="nomor_induk" type="text" class="form-control" placeholder="Input Nomor Induk" @error('nomor_induk') is-invalid @enderror name="nomor_induk" value="{{ old('nomor_induk') }}">
+                                    <input id="nomor_induk" type="text" class="form-control" placeholder="Input Nomor Induk" @error('nomor_induk') is-invalid @enderror name="nomor_induk" value="{{ $nomor_induk }}" readonly>
                                     @error('nomor_induk')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
@@ -62,20 +62,38 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Jenis Kelamin</label>
-                                    <input id="jenis_kelamin" type="text" class="form-control" placeholder="Input Jenis Kelamin" @error('jenis_kelamin') is-invalid @enderror name="jenis_kelamin" value="{{ old('jenis_kelamin') }}">
-                                    @error('jenis_kelamin')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <select id="jenis_kelamin" type="text" class="form-control" placeholder="Input Jenis Kelamin" @error('jenis_kelamin') is-invalid @enderror name="jenis_kelamin" value="{{ old('jenis_kelamin') }}">
+                                        <option placeholder>Pilih satu..</option>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                        @error('jenis_kelamin')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Agama</label>
-                                    <input id="agama" type="text" class="form-control" placeholder="Input Agama" @error('agama') is-invalid @enderror name="agama" value="{{ old('agama') }}">
-                                    @error('agama')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <select id="agama" type="text" class="form-control" placeholder="Input Agama" @error('agama') is-invalid @enderror name="agama" value="{{ old('agama') }}">
+                                        <option placeholder>Pilih satu..</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Kristen">Kristen</option>
+                                        <option value="Katolik">Katolik</option>
+                                        <option value="Hindu">Hindu</option>
+                                        <option value="Budha">Budha</option>
+                                        <option value="Konghucu">Konghucu</option>
+                                        @error('agama')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Status Pernikahan</label>
-                                    <input id="status_pernikahan" type="text" class="form-control" placeholder="Input Status Pernikahan" @error('status_pernikahan') is-invalid @enderror name="status_pernikahan" value="{{ old('status_pernikahan') }}">
+                                    <select id="status_pernikahan" type="text" class="form-control" placeholder="Input Status Pernikahan" @error('status_pernikahan') is-invalid @enderror name="status_pernikahan" value="{{ old('status_pernikahan') }}">
+                                        <option placeholder>Pilih satu..</option>
+                                        <option value="Sudah Kawin">Sudah Kawin</option>
+                                        <option value="Belum Kawin">Belum Kawin</option>
+                                        <option value="Cerai Hidup">Cerai Hidup</option>
+                                        <option value="Cerai Mati">Cerai Mati</option>
                                     @error('status_pernikahan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
@@ -98,26 +116,45 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Pendidikan Terakhir</label>
-                                    <input id="pendidikan_terakhir" type="text" class="form-control" placeholder="Input pendidikan_terakhir" @error('pendidikan_terakhir') is-invalid @enderror name="pendidikan_terakhir" value="{{ old('pendidikan_terakhir') }}">
-                                    @error('pendidikan_terakhir')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <select id="pendidikan_terakhir" type="text" class="form-control" placeholder="Input pendidikan_terakhir" @error('pendidikan_terakhir') is-invalid @enderror name="pendidikan_terakhir" value="{{ old('pendidikan_terakhir') }}">
+                                        <option placeholder>Pilih satu..</option>
+                                        <option value="SD">SD</option>
+                                        <option value="SMP/SLTP">SMP/SLTP</option>
+                                        <option value="SMA/SLTA Sederajat">SMA/SLTA Sederajat</option>
+                                        <option value="S1">S1</option>
+                                        <option value="S2">S2</option>
+                                        @error('pendidikan_terakhir')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
-                                    <label>Kode Jabatan</label>
-                                    <input id="kode_jabatan" type="text" class="form-control" placeholder="Input kode_jabatan" @error('kode_jabatan') is-invalid @enderror name="kode_jabatan" value="{{ old('kode_jabatan') }}">
-                                    @error('kode_jabatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label>Jabatan</label>
+                                    <select class="form-control" name="kode_jabatan" id="kode_jabatan">
+                                            <option selected>Cari Jabatan</option>
+                                        @foreach ($jab as $jb)
+                                            <option value="{{ $jb->kode_jabatan }}">{{ $jb->nama_jabatan }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
-                                    <label>KOde Cabang</label>
-                                    <input id="kode_cabang" type="text" class="form-control" placeholder="Input kode_cabang" @error('kode_cabang') is-invalid @enderror name="kode_cabang" value="{{ old('kode_cabang') }}">
-                                    @error('kode_cabang')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label>Cabang</label>
+                                    <select class="form-control" name="kode_cabang" id="kode_cabang">
+                                            <option selected>Cari Cabang</option>
+                                        @foreach ($cab as $c)
+                                            <option value="{{ $c->kode_cabang }}">{{ $c->nama_cabang }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
-                                    <label>Kode Departemen</label>
-                                    <input id="kode_departemen" type="text" class="form-control" placeholder="Input kode_departemen" @error('kode_departemen') is-invalid @enderror name="kode_departemen" value="{{ old('kode_departemen') }}">
-                                    @error('kode_departemen')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <label>Departemen</label>
+                                    <select class="form-control" name="kode_departemen" id="kode_departemen">
+                                            <option selected>Cari Departemen</option>
+                                        @foreach ($dep as $dp)
+                                            <option value="{{ $dp->kode_departemen }}">{{ $dp->nama_departemen }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
