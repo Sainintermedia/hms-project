@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\KaryawanExport;
 
 
 class KaryawanController extends Controller
@@ -14,6 +16,11 @@ class KaryawanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function export_excel()
+	{
+		return Excel::download(new karyawanExport, 'karyawan.xlsx');
+	}
+
     public function index()
     {
         $Karya = DB::table('karyawan as a')
