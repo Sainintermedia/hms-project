@@ -154,6 +154,10 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::put('/gajiupdate/{id}', [GajiController::class, 'update']);
     Route::get('/gajiedit/{id}', [GajiController::class, 'edit']);
     Route::get('/gajihapus/{id}', [GajiController::class, 'hapusdata']);
+    Route::get('/cekgaji', [GajiController::class, 'cekgaji']);
+
+    
+
 
     // //Departemen
     // Route::get('/dep',[DepartemenContoller::class, 'tampil'])->name('dep');

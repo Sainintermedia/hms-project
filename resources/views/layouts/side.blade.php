@@ -239,7 +239,7 @@
                                 </a>
                                 @endif
                                 @if (Auth::user()->is_admin == '1' ||Auth::user()->is_admin == '2' )
-                                <a href="#">
+                                <a href="/cekgaji">
                                     <span class="sub-item">Slip Gaji</span>
                                 </a>
                                 @endif
