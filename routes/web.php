@@ -101,7 +101,7 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/cutitambah',[CutiController::class, 'create']);
     Route::put('/cutiupdate/{id}',[CutiController::class, 'update']);
     Route::get('/editcuti/{id}',[CutiController::class, 'edit']);
-    Route::get('/hapuscuti/{id}',[CutiController::class, 'destroy']);
+    Route::get('/hapuscuti/{id}',[CutiController::class, 'hapusdata']);
 
 
     ///////////////////////////             TRANSAKSI                        ////////////////////////////

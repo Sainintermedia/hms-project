@@ -16,7 +16,7 @@ class CutiController extends Controller
     public function index()
     {
         $Cut = DB::table('cuti')->get();
-        return view ('Transaksi/lembur.Cuti.cuti', compact ('Cut'));
+        return view ('Transaksi.Cuti.cuti', compact ('Cut'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CutiController extends Controller
      */
     public function create()
     {
-        return view ('Transaksi/lembur.Cuti.cutitambah');
+        return view ('Transaksi.Cuti.cutitambah');
     }
 
     /**
@@ -69,7 +69,7 @@ class CutiController extends Controller
     public function edit($id)
     {
         $ct = Cuti::find($id);
-        return view('Transaksi/lembur.Cuti.editcuti',compact('ct'));
+        return view('Transaksi.Cuti.editcuti',compact('ct'));
     }
 
     /**
@@ -99,7 +99,12 @@ class CutiController extends Controller
      */
     public function destroy($id)
     {
+        
+    }
+
+    public function hapusdata($id)
+    {
         Cuti::find($id)->delete();
-        return back()->with('success','Post deleted successfully');
+        return redirect('/cuti')->with('success','Post deleted successfully');
     }
 }
