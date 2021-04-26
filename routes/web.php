@@ -14,6 +14,8 @@ use App\Http\Controllers\GajiController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\LemburController;
 use App\Http\Controllers\CutiController;
+use App\Http\Controllers\OptionsController;
+use App\Http\Controllers\StandarController;
 use App\Http\Controllers\PotonganLainController;
 use GuzzleHttp\Middleware;
 use App\Http\Controllers\MailController;
@@ -103,6 +105,26 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/editcuti/{id}',[CutiController::class, 'edit']);
     Route::get('/hapuscuti/{id}',[CutiController::class, 'hapusdata']);
 
+    //Master Option
+    Route::get('/option',[OptionsController::class, 'index']);
+    Route::post('/option',[OptionsController::class, 'store']);
+    Route::get('/optiontambah',[OptionsController::class, 'create']);
+    Route::put('/option/{id}',[OptionsController::class, 'update']);
+    Route::get('/optionedit/{id}',[OptionsController::class, 'edit']);
+    Route::get('/optionhapus/{id}',[OptionsController::class, 'destroy']);
+
+    //Master Standar
+    Route::get('/standar',[StandarController::class, 'index']);
+    Route::post('/standar',[StandarController::class, 'store']);
+    Route::get('/standartambah',[StandarController::class, 'create']);
+    Route::put('/standar/{id}',[StandarController::class, 'update']);
+    Route::get('/standaredit/{id}',[StandarController::class, 'edit']);
+    Route::get('/standarhapus/{id}',[StandarController::class, 'destroy']);
+
+
+
+
+    
 
     ///////////////////////////             TRANSAKSI                        ////////////////////////////
 

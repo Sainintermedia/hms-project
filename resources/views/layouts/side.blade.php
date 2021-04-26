@@ -248,6 +248,44 @@
 					</div>
 				</li>
 
+				@if (Auth::user()->is_admin == '1')
+				<li class="nav-item">
+					<a data-toggle="collapse" href="#opt">
+						<i class="fa fa-cogs" aria-hidden="true"></i>
+						<p>Data Options</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="opt">
+						<ul class="nav nav-collapse">
+                            <li>
+                                <a href="/option">
+                                    <span class="sub-item">Lihat Options</span>
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</li>
+                @endif
+
+				@if (Auth::user()->is_admin == '1')
+				<li class="nav-item">
+					<a data-toggle="collapse" href="#std">
+						<i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+						<p>Data Standar</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="std">
+						<ul class="nav nav-collapse">
+                            <li>
+                                <a href="/standar">
+                                    <span class="sub-item">Lihat Data Standar</span>
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</li>
+                @endif
+
                 <li class="nav-section">
 					<span class="sidebar-mini-icon">
 						<i class="fa fa-ellipsis-h"></i>
