@@ -47,8 +47,7 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::view('/dashboard', 'dashboard');
 
 
-
-    //////////////////                  MASTER DATA                  /////////////////////////////
+    /////////////////////////                MASTER DATA                  /////////////////////////////
 
 
     //Karyawan Master
@@ -95,6 +94,7 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/historykenaikangajiedit/{id}', [HistoryKenaikanGajiController::class, 'edit']);
     Route::get('/historykenaikangajihapus/{id}', [HistoryKenaikanGajiController::class, 'hapusdata']);
 
+
     //Cuti Master
     Route::get('/cuti',[CutiController::class, 'index']);
     Route::post('/cuti',[CutiController::class, 'store']);
@@ -116,7 +116,6 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/lemburhapus/{id}', [LemburController::class, 'hapusdata']);
 
 
-
     //Potngan Lain Lain
     Route::get('/potonganlainlain', [PotonganLainLainController::class, 'index']);
     Route::post('/potonganlainlain', [PotonganLainLainController::class, 'store']);
@@ -125,6 +124,14 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/potonganlainlainedit/{id}', [PotonganLainLainController::class, 'edit']);
     Route::get('/potonganlainlainhapus/{id}', [PotonganLainLainController::class, 'hapusdata']);
 
+
+    //Gaji
+    Route::get('/gaji', [GajiController::class, 'index']);
+    Route::post('/gaji', [GajiController::class, 'store']);
+    Route::get('/gajitambah', [GajiController::class, 'create']);
+    Route::put('/gajiupdate/{id}', [GajiController::class, 'update']);
+    Route::get('/gajiedit/{id}', [GajiController::class, 'edit']);
+    Route::get('/gajihapus/{id}', [GajiController::class, 'hapusdata']);
 
     // //Departemen
     // Route::get('/dep',[DepartemenContoller::class, 'tampil'])->name('dep');
