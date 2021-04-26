@@ -31,6 +31,7 @@
 								<div class="card-header">
 
 									<a href="/karyawantambah" type="button" class="btn btn-primary btn-round">+ Data Karyawan</a>
+                                    <a href="/export_excel" class="btn btn-success btn-round"> <i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Excel</a>
 									@if (session('status'))
 									<div class="alert alert-success">
 										{{ session('status') }}

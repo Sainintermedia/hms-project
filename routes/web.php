@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::put('/karyawanupdate/{id}', [KaryawanController::class, 'update']);
     Route::get('/karyawanedit/{id}', [KaryawanController::class, 'edit']);
     Route::get('/karyawanhapus/{id}', [KaryawanController::class, 'hapusdata']);
+    Route::get('/export_excel', [KaryawanController::class, 'export_excel']);
 
 
     //Jabatan Master
@@ -125,7 +126,7 @@ Route::group(['middleware' => 'auth' ], function(){
 
 
 
-    
+
 
     ///////////////////////////             TRANSAKSI                        ////////////////////////////
 
@@ -157,7 +158,7 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/gajihapus/{id}', [GajiController::class, 'hapusdata']);
     Route::get('/cekgaji', [GajiController::class, 'cekgaji']);
 
-    
+
 
 
     // //Departemen
