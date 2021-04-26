@@ -18,7 +18,7 @@
                 <li class="list-group-item">Vestibulum at eros</li>
                 </ul>
                 <div class="card-body">
-                <a href="/karyawantambah" type="button" class="btn btn-primary btn-round">Cetak</a>
+                <a href="#" type="button" class="btn btn-primary btn-round">Cetak</a>
                 </div>
                 {{-- @endforeach --}}
             </div>
