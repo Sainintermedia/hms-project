@@ -26,7 +26,15 @@ class GajiController extends Controller
      */
     public function create()
     {
-        return view ('Transaksi.Gaji.tambahgaji');
+        $Bulan = bulan(date('Y-m-d'));
+        $Tahun = tahun(date('Y-m-d'));
+        $Gj = DB::table('karyawan as a')
+        ->join('cabang as b', 'a.kode_cabang', '=', 'b.kode_cabang')
+        ->join('jabatan as c','a.kode_jabatan','=','c.kode_jabatan')
+        ->join('departemen as d','a.kode_departemen','=','d.kode_departemen')
+        ->select('a.nomor_induk','a.nama', 'a.nama_bank', 'a.nomor_rekening', 'a.rekening_atas_nama','b.nama_cabang','b.uang_makan','c.nama_jabatan','a.gaji_pokok','c.tunjangan_jabatan','d.nama_departemen')
+        ->get();
+        return view ('Transaksi.Gaji.tambahgaji', compact ('Gj','Bulan','Tahun'));
     }
 
     /**
