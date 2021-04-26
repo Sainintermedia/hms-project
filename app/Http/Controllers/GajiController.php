@@ -35,6 +35,11 @@ class GajiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function cekgaji()
+    {
+        // $Gaj = DB::table('gaji')->get();
+        return view ('Transaksi.Gaji.slipgaji');
+    }
     public function store(Request $request)
     {
         $request->validate([
