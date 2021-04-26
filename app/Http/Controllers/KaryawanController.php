@@ -20,11 +20,7 @@ class KaryawanController extends Controller
         ->join('jabatan as b','a.kode_jabatan','=','b.kode_jabatan')
         ->join('departemen as c','a.kode_departemen','=','c.kode_departemen')
         ->join('cabang as d','a.kode_cabang','=','d.kode_cabang')
-<<<<<<< HEAD
-        ->select('a.id','a.nik','a.nomor_induk','a.nama', 'a.tempat_lahir', 'a.tanggal_lahir', 'a.jenis_kelamin', 'a.agama', 'a.status_pernikahan', 'a.jumlah_anak', 
-=======
-        ->select('a.id','a.nomor_induk','a.nama', 'a.tempat_lahir', 'a.tanggal_lahir', 'a.jenis_kelamin', 'a.agama', 'a.status_pernikahan', 'a.jumlah_anak',
->>>>>>> c91b96d860a2bc15dc5f174d9cb2a55cdd34c2e1
+        ->select('a.id','a.nomor_induk','a.nik','a.nama', 'a.tempat_lahir', 'a.tanggal_lahir', 'a.jenis_kelamin', 'a.agama', 'a.status_pernikahan', 'a.jumlah_anak',
         'a.alamat','a.nomor_telepon','a.pendidikan_terakhir', 'd.nama_cabang', 'b.nama_jabatan',
          'c.nama_departemen','a.gaji_pokok','a.tanggal_diangkat','a.tanggal_keluar','a.nama_bank','a.nomor_rekening','a.rekening_atas_nama','a.created_at')
         ->get();
