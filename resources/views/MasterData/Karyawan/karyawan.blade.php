@@ -126,6 +126,13 @@
 															    <i class="fa fa-edit"></i>
                                                             </a>
                                                         </div>
+
+														<div class="form-button-action">
+															<a href="/show/{{$kry->id}}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+															    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+
 														    <div href="/karyawanhapus/{{$kry->id}}" type="button" data-toggle="tooltip"   title="" class="btn btn-link btn-danger delete-confirm"  data-original-title="Remove">
 															    <i class="fa fa-times" ></i>
 														    </div>

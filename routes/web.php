@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth' ], function(){
 
     //Karyawan Master
     Route::get('/karyawan', [KaryawanController::class, 'index']);
+    Route::get('/show/{id}',[KaryawanController::class, 'show']);
     Route::post('/karyawan', [KaryawanController::class, 'store']);
     Route::get('/karyawantambah', [KaryawanController::class, 'create']);
     Route::put('/karyawanupdate/{id}', [KaryawanController::class, 'update']);
