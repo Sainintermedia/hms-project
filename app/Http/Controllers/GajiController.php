@@ -15,7 +15,11 @@ class GajiController extends Controller
      */
     public function index()
     {
-        $Gaj = DB::table('gaji')->get();
+        $Gaj = DB::table('gaji as a')
+        ->join('users as b','a.kode_jabatan','=','b.kode_jabatan')
+        ->join('karyawan as c','a.kode_departemen','=','c.kode_departemen')
+        ->select('a.id','a.nik','a.nomor_induk','a.nama', 'a.tempat_lahir')
+        ->get();
         return view ('Transaksi.Gaji.gaji', compact ('Gaj'));
     }
 
@@ -37,7 +41,7 @@ class GajiController extends Controller
      */
     public function cekgaji()
     {
-        // $Gaj = DB::table('gaji')->get();
+        $slipgaji = DB::table('gaji')->get();
         return view ('Transaksi.Gaji.slipgaji');
     }
     public function store(Request $request)

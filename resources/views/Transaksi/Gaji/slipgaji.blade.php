@@ -4,7 +4,7 @@
                 <img class="card-img-top" img src="../assets/img/profile.jpg" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">	{{ Auth::user()->name }}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Jabatan : </p>
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
