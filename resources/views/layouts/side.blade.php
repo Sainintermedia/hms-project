@@ -50,28 +50,14 @@
 					<a href="/home">
 						<i class="fas fa-home"></i>
 						<p>Dashboard</p>
-						{{-- <span class="caret"></span> --}}
 					</a>
-					{{-- <div class="collapse" id="dashboard">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="../demo1/index.html">
-									<span class="sub-item">Dashboard 1</span>
-								</a>
-							</li>
-							<li>
-								<a href="../demo2/index.html">
-									<span class="sub-item">Dashboard 2</span>
-								</a>
-							</li>
-						</ul>
-					</div> --}}
 				</li>
+
 				<li class="nav-section">
 					<span class="sidebar-mini-icon">
 						<i class="fa fa-ellipsis-h"></i>
 					</span>
-					<h4 class="text-section">Components</h4>
+					<h4 class="text-section">Master Data</h4>
 				</li>
 
                 @if (Auth::user()->is_admin == '1')
@@ -89,26 +75,6 @@
 								</a>
 							</li>
 
-						</ul>
-					</div>
-				</li>
-                @endif
-
-
-                @if (Auth::user()->is_admin == '1')
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#sidebarLayouts">
-						<i class="fas fa-users-cog"></i>
-						<p>User</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="sidebarLayouts">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="/pengguna">
-									<span class="sub-item">Lihat User</span>
-								</a>
-							</li>
 						</ul>
 					</div>
 				</li>
@@ -136,7 +102,6 @@
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#dep">
-						{{-- <i class="fas fa-map-marker-alt"></i> --}}
 						<i class="far fa-building"></i>
 						<p>Departemen</p>
 						<span class="caret"></span>
@@ -173,33 +138,6 @@
 				</li>
                 @endif
 
-                @if (Auth::user()->is_admin == '1' ||Auth::user()->is_admin == '2' )
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#gaji">
-					<i class="fas fa-dollar-sign" aria-hidden="true"></i>
-						<p>Data Gaji</p>
-						<span class="caret"></span>
-					</a>
-                @endif
-
-					<div class="collapse" id="gaji">
-						<ul class="nav nav-collapse">
-                            <li>
-                                @if (Auth::user()->is_admin == '1')
-                                <a href="datagaji">
-                                    <span class="sub-item">Lihat Data Gaji</span>
-                                </a>
-                                @endif
-                                @if (Auth::user()->is_admin == '1' ||Auth::user()->is_admin == '2' )
-                                <a href="#">
-                                    <span class="sub-item">Slip Gaji</span>
-                                </a>
-                                @endif
-                            </li>
-						</ul>
-					</div>
-				</li>
-
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#historygaji">
@@ -218,6 +156,13 @@
 					</div>
 				</li>
                 @endif
+
+                <li class="nav-section">
+					<span class="sidebar-mini-icon">
+						<i class="fa fa-ellipsis-h"></i>
+					</span>
+					<h4 class="text-section">Transaksi</h4>
+				</li>
 
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
@@ -261,13 +206,13 @@
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#pot">
 						<i class="fas fa-hand-holding-usd"></i>
-						<p>Potongan Lain</p>
+						<p>Data Potongan Lain</p>
 						<span class="caret"></span>
 					</a>
 					<div class="collapse" id="pot">
 						<ul class="nav nav-collapse">
                             <li>
-                                <a href="potongan">
+                                <a href="potonganlainlain">
                                     <span class="sub-item">Lihat Potongan Lain</span>
                                 </a>
                             </li>
@@ -276,57 +221,60 @@
 				</li>
                 @endif
 
+                @if (Auth::user()->is_admin == '1' ||Auth::user()->is_admin == '2' )
 				<li class="nav-item">
-					<a href="widgets.html">
-						<i class="fas fa-desktop"></i>
-						<p>Widgets</p>
-						<span class="badge badge-success">4</span>
-					</a>
-				</li>
-
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#submenu">
-						<i class="fas fa-bars"></i>
-						<p>Transaksi Gaji</p>
+					<a data-toggle="collapse" href="#gaji">
+					<i class="fas fa-dollar-sign" aria-hidden="true"></i>
+						<p>Data Gaji</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="submenu">
+                @endif
+
+					<div class="collapse" id="gaji">
 						<ul class="nav nav-collapse">
                             <li>
-                                <a href="/transaksigaji">
-                                <span class="sub-item">Lihat Data Cabang</span>
+                                @if (Auth::user()->is_admin == '1')
+                                <a href="/gaji">
+                                    <span class="sub-item">Lihat Data Gaji</span>
                                 </a>
+                                @endif
+                                @if (Auth::user()->is_admin == '1' ||Auth::user()->is_admin == '2' )
+                                <a href="#">
+                                    <span class="sub-item">Slip Gaji</span>
+                                </a>
+                                @endif
                             </li>
-                        </ul>
-                    </div>
-                </li>
-			</ul>
-		</div>
-							{{-- </li>
-							<li>
-								<a data-toggle="collapse" href="#subnav2">
-									<span class="sub-item">Level 1</span>
-									<span class="caret"></span>
-								</a>
-								<div class="collapse" id="subnav2">
-									<ul class="nav nav-collapse subnav">
-										<li>
-											<a href="#">
-												<span class="sub-item">Level 2</span>
-											</a>
-										</li>
-			</ul>
-								</div>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sub-item">Level 1</span>
-								</a>
-							</li> --}}
-						{{-- </ul>
+						</ul>
 					</div>
 				</li>
-			</ul> --}}
-		{{-- </div> --}}
+
+                <li class="nav-section">
+					<span class="sidebar-mini-icon">
+						<i class="fa fa-ellipsis-h"></i>
+					</span>
+					<h4 class="text-section">Pengguna</h4>
+				</li>
+
+                @if (Auth::user()->is_admin == '1')
+				<li class="nav-item">
+					<a data-toggle="collapse" href="#sidebarLayouts">
+						<i class="fas fa-users-cog"></i>
+						<p>User</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="sidebarLayouts">
+						<ul class="nav nav-collapse">
+							<li>
+								<a href="/pengguna">
+									<span class="sub-item">Lihat User</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+                @endif
+
+			</ul>
+		</div>
 	</div>
 </div>
