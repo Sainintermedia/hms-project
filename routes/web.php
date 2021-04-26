@@ -21,6 +21,7 @@ use App\Http\Controllers\PenggajihanController;
 use App\Models\Karyawan;
 use Illuminate\Http\Response;
 use App\Exports\KaryawanExport;
+use App\Http\Controllers\PotonganLainLainController;
 use App\Models\HistoryKenaikanGaji;
 
 /*
@@ -99,7 +100,7 @@ Route::group(['middleware' => 'auth' ], function(){
     ///////////////////////////             TRANSAKSI                        ////////////////////////////
 
 
-
+    //Lembur Transaksi
     Route::get('/lembur', [LemburController::class, 'index']);
     Route::post('/lembur', [LemburController::class, 'store']);
     Route::get('/lemburtambah', [LemburController::class, 'create']);
@@ -107,6 +108,15 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/lemburedit/{id}', [LemburController::class, 'edit']);
     Route::get('/lemburhapus/{id}', [LemburController::class, 'hapusdata']);
 
+
+
+    //Potngan Lain Lain
+    Route::get('/potonganlainlain', [PotonganLainLainController::class, 'index']);
+    Route::post('/potonganlainlain', [PotonganLainLainController::class, 'store']);
+    Route::get('/potonganlainlaintambah', [PotonganLainLainController::class, 'create']);
+    Route::put('/potonganlainlainupdate/{id}', [PotonganLainLainController::class, 'update']);
+    Route::get('/potonganlainlainedit/{id}', [PotonganLainLainController::class, 'edit']);
+    Route::get('/potonganlainlainhapus/{id}', [PotonganLainLainController::class, 'hapusdata']);
 
 
     // //Departemen
