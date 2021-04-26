@@ -77,7 +77,7 @@
 													<td>{{$hkg->gaji_pokok_lama}}</td>
 													<td>{{$hkg->persentase_kenaikan}}</td>
 													<td>{{$hkg->gaji_pokok_baru}}</td>
-													<td>{{ date('d M Y',strtotime($dp->created_at)) }}</td>
+													<td>{{ date('d M Y',strtotime($hkg->created_at)) }}</td>
 													<td>
 														<div class="form-button-action">
 															<a href="/historykenaikangajiedit/{{$hkg->id}}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">

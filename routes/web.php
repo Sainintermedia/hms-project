@@ -85,6 +85,11 @@ Route::group(['middleware' => 'auth' ], function(){
 
     //History Kenaikan gaji Master
     Route::get('/historykenaikangaji', [HistoryKenaikanGajiController::class, 'index']);
+    Route::post('/historykenaikangaji', [HistoryKenaikanGajiController::class, 'store']);
+    Route::get('/historykenaikangajitambah', [HistoryKenaikanGajiController::class, 'create']);
+    Route::put('/historykenaikangajiupdate/{id}', [HistoryKenaikanGajiController::class, 'update']);
+    Route::get('/historykenaikangajiedit/{id}', [HistoryKenaikanGajiController::class, 'edit']);
+    Route::get('/historykenaikangajihapus/{id}', [HistoryKenaikanGajiController::class, 'hapusdata']);
 
 
 

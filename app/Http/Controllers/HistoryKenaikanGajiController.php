@@ -25,7 +25,7 @@ class HistoryKenaikanGajiController extends Controller
      */
     public function create()
     {
-        //
+        return view('MasterData.DataHistoryKenaikanGaji.tambahhistorykenaikangaji');
     }
 
     /**
@@ -36,7 +36,19 @@ class HistoryKenaikanGajiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+        'nomor_induk' => 'required|max:10',
+        'bulan' => 'required',
+        'tahun' => 'required',
+        'gaji_pokok_lama' => 'required',
+        'persentase_kenaikan' => 'required',
+        'gaji_pokok_baru' => 'required',
+
+        ]);
+
+            HistoryKenaikanGaji::create($request->all());
+            return redirect('/historykenaikangaji')->with('status','Data History Kenaikan Gaji Berhasil Ditambahkan');
     }
 
     /**
@@ -56,9 +68,11 @@ class HistoryKenaikanGajiController extends Controller
      * @param  \App\Models\HistoryKenaikanGaji  $historyKenaikanGaji
      * @return \Illuminate\Http\Response
      */
-    public function edit(HistoryKenaikanGaji $historyKenaikanGaji)
+    public function edit($id)
     {
-        //
+
+        $his = HistoryKenaikanGaji::find($id);
+        return view('MasterData.DataHistoryKenaikanGaji.edithistorykenaikangaji',compact('his'));
     }
 
     /**
@@ -68,9 +82,17 @@ class HistoryKenaikanGajiController extends Controller
      * @param  \App\Models\HistoryKenaikanGaji  $historyKenaikanGaji
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HistoryKenaikanGaji $historyKenaikanGaji)
+    public function update(Request $request,$id)
     {
-        //
+        $his = HistoryKenaikanGaji::find($id);
+        $his->nomor_induk = $request->nomor_induk;
+        $his->bulan = $request->bulan;
+        $his->tahun = $request->tahun;
+        $his->gaji_pokok_lama = $request->gaji_pokok_lama;
+        $his->persentase_kenaikan = $request->persentase_kenaikan;
+        $his->gaji_pokok_baru = $request->gaji_pokok_baru;
+        $his->save();
+        return redirect('/historykenaikangaji')->with('status','Data Berhasil Diubah!');
     }
 
     /**
@@ -83,4 +105,11 @@ class HistoryKenaikanGajiController extends Controller
     {
         //
     }
+
+    public function hapusdata($id)
+    {
+        HistoryKenaikanGaji::find($id)->delete();
+        return back()->with('success','Post deleted successfully');
+    }
+
 }
