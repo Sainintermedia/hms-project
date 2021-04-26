@@ -89,7 +89,7 @@ class KaryawanController extends Controller
      * @param  \App\Models\Karyawan  $karyawan
      * @return \Illuminate\Http\Response
      */
-    public function show(Karyawan $karyawan)
+    public function show($id)
     {
         $karyawan= karyawan::find($id);
         return view('MasterData.Karyawan.show', compact('karyawan'));
