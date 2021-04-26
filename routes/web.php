@@ -44,8 +44,11 @@ Route::group(['middleware' => 'auth' ], function(){
 
     Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('is_admin');
     Route::view('/dashboard', 'dashboard');
-    //Dep
-    //Route::get('/datajabatan',[JabatanController::class, 'index']);
+
+
+
+    //////////////////                  MASTER DATA                  /////////////////////////////
+
 
     //Karyawan Master
     Route::get('/karyawan', [KaryawanController::class, 'index']);
@@ -90,6 +93,19 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::put('/historykenaikangajiupdate/{id}', [HistoryKenaikanGajiController::class, 'update']);
     Route::get('/historykenaikangajiedit/{id}', [HistoryKenaikanGajiController::class, 'edit']);
     Route::get('/historykenaikangajihapus/{id}', [HistoryKenaikanGajiController::class, 'hapusdata']);
+
+
+
+    ///////////////////////////             TRANSAKSI                        ////////////////////////////
+
+
+
+    Route::get('/lembur', [LemburController::class, 'index']);
+    Route::post('/lembur', [LemburController::class, 'store']);
+    Route::get('/lemburtambah', [LemburController::class, 'create']);
+    Route::put('/lemburupdate/{id}', [LemburController::class, 'update']);
+    Route::get('/lemburedit/{id}', [LemburController::class, 'edit']);
+    Route::get('/lemburhapus/{id}', [LemburController::class, 'hapusdata']);
 
 
 
