@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth' ], function(){
 
     //Karyawan Master
     Route::get('/karyawan', [KaryawanController::class, 'index']);
+    Route::get('/show/{id}',[KaryawanController::class, 'show']);
     Route::post('/karyawan', [KaryawanController::class, 'store']);
     Route::get('/karyawantambah', [KaryawanController::class, 'create']);
     Route::put('/karyawanupdate/{id}', [KaryawanController::class, 'update']);
@@ -154,6 +155,10 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::put('/gajiupdate/{id}', [GajiController::class, 'update']);
     Route::get('/gajiedit/{id}', [GajiController::class, 'edit']);
     Route::get('/gajihapus/{id}', [GajiController::class, 'hapusdata']);
+    Route::get('/cekgaji', [GajiController::class, 'cekgaji']);
+
+    
+
 
     // //Departemen
     // Route::get('/dep',[DepartemenContoller::class, 'tampil'])->name('dep');
