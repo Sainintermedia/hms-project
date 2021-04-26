@@ -94,25 +94,6 @@
 				</li>
                 @endif
 
-                @if (Auth::user()->is_admin == '1')
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#pekerja">
-						<i class="fas fa-layer-group"></i>
-						<p>Data Pekerja</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="pekerja">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="/pekerja">
-									<span class="sub-item">Lihat Data</span>
-								</a>
-							</li>
-
-						</ul>
-					</div>
-				</li>
-                @endif
 
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
@@ -135,15 +116,15 @@
 
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
-					<a data-toggle="collapse" href="#forms">
+					<a data-toggle="collapse" href="#jabatan">
 						<i class="fas fa-user-shield"></i>
 						<p>Jabatan</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="forms">
+					<div class="collapse" id="jabatan">
 						<ul class="nav nav-collapse">
 							<li>
-								<a href="/datajabatan">
+								<a href="/jabatan">
 									<span class="sub-item">Table Data Jabatan</span>
 								</a>
 							</li>
@@ -154,16 +135,16 @@
 
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
-					<a data-toggle="collapse" href="#maps">
+					<a data-toggle="collapse" href="#dep">
 						{{-- <i class="fas fa-map-marker-alt"></i> --}}
 						<i class="far fa-building"></i>
 						<p>Departemen</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="maps">
+					<div class="collapse" id="dep">
 						<ul class="nav nav-collapse">
 							<li>
-								<a href="/dep">
+								<a href="/departemen">
 									<span class="sub-item">Lihat Departemen</span>
 								</a>
 							</li>
@@ -182,7 +163,7 @@
 					<div class="collapse" id="cabang">
 						<ul class="nav nav-collapse">
 						<li>
-								<a href="cabang">
+								<a href="/cabang">
 									<span class="sub-item">Lihat Data Cabang</span>
 								</a>
 							</li>
@@ -221,6 +202,25 @@
 
                 @if (Auth::user()->is_admin == '1')
 				<li class="nav-item">
+					<a data-toggle="collapse" href="#historygaji">
+						<i class="fas fa-history"></i>
+						<p>History Gaji</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="historygaji">
+						<ul class="nav nav-collapse">
+                            <li>
+                                <a href="/historykenaikangaji">
+                                    <span class="sub-item">History Kenaikan Gaji</span>
+                                </a>
+                            </li>
+						</ul>
+					</div>
+				</li>
+                @endif
+
+                @if (Auth::user()->is_admin == '1')
+				<li class="nav-item">
 					<a data-toggle="collapse" href="#lembur">
 						<i class="fas fa-clock" aria-hidden="true"></i>
 						<p>Data Lembur</p>
@@ -229,7 +229,7 @@
 					<div class="collapse" id="lembur">
 						<ul class="nav nav-collapse">
                             <li>
-                                <a href="lembur">
+                                <a href="/lembur">
                                     <span class="sub-item">Lihat Data Lembur</span>
                                 </a>
                             </li>

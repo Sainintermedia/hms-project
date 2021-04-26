@@ -94,6 +94,13 @@ Route::group(['middleware' => 'auth' ], function(){
     Route::get('/historykenaikangajiedit/{id}', [HistoryKenaikanGajiController::class, 'edit']);
     Route::get('/historykenaikangajihapus/{id}', [HistoryKenaikanGajiController::class, 'hapusdata']);
 
+    //Cuti Master
+    Route::get('/cuti',[CutiController::class, 'index']);
+    Route::post('/cuti',[CutiController::class, 'store']);
+    Route::get('/cutitambah',[CutiController::class, 'create']);
+    Route::put('/cutiupdate/{id}',[CutiController::class, 'update']);
+    Route::get('/editcuti/{id}',[CutiController::class, 'edit']);
+    Route::get('/hapuscuti/{id}',[CutiController::class, 'destroy']);
 
 
     ///////////////////////////             TRANSAKSI                        ////////////////////////////
