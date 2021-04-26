@@ -45,37 +45,51 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Bulan</label>
-                                    <input id="bulan" type="text" class="form-control" placeholder="" @error('bulan') is-invalid @enderror name="bulan" value="{{ $Bulan }}">
+                                    <select id="bulan" type="text" class="form-control" placeholder="" @error('bulan') is-invalid @enderror name="bulan" value="{{ $Bulan }}">
+                                    <option placeholder>{{ $Bulan }}</option>
+                                            <option value="Januari">Januari</option>
+                                            <option value="Februari">Februari</option>
+                                            <option value="Maret">Maret</option>
+                                            <option value="April">April</option>
+                                            <option value="Mei">Mei</option>
+                                            <option value="Juni">Juni</option>
+                                            <option value="Juli">Juli</option>
+                                            <option value="Agustus">Agustus</option>
+                                            <option value="September">September</option>
+                                            <option value="Oktober">Oktober</option>
+                                            <option value="November">November</option>
+                                            <option value="Desember">Desember</option>
                                     @error('bulan')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    </select>
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Tahun</label>
-                                    <input id="tahun" type="text" class="form-control" placeholder="Input Tahun" @error('tahun') is-invalid @enderror name="tahun" value="{{ $Tahun }}">
+                                    <input id="tahun" type="text" class="form-control" placeholder="Input Tahun" @error('tahun') is-invalid @enderror name="tahun" value="{{ $Tahun }}" readonly>
                                     @error('tahun')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Gaji Pokok</label>
-                                    <input id="gaji_pokok" type="text" class="form-control Dsgaji_pokok" @error('gaji_pokok') is-invalid @enderror placeholder="Input gaji_pokok" name="gaji_pokok" value="{{ old('gaji_pokok') }}">
+                                    <input id="gaji_pokok" type="text" class="form-control Dsgaji_pokok" @error('gaji_pokok') is-invalid @enderror placeholder="Input gaji_pokok" name="gaji_pokok" value="{{ old('gaji_pokok') }}" readonly>
                                     @error('gaji_pokok')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Tunjangan Jabatan</label>
-                                    <input id="tunjangan_jabatan" type="text" class="form-control Dstunjangan_jabatan" @error('tunjangan_jabatan') is-invalid @enderror placeholder="Input tunjangan_jabatan" name="tunjangan_jabatan" value="{{ old('tunjangan_jabatan') }}">
+                                    <input id="tunjangan_jabatan" type="text" class="form-control Dstunjangan_jabatan" @error('tunjangan_jabatan') is-invalid @enderror placeholder="Input tunjangan_jabatan" name="tunjangan_jabatan" value="{{ old('tunjangan_jabatan') }}" readonly>
                                     @error('tunjangan_jabatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Tunjanagan keluarga</label>
-                                    <input id="tunjangan_keluarga" type="text" class="form-control" placeholder="Input Tunjangan Keluarga" @error('tunjangan_keluarga') is-invalid @enderror name="tunjangan_keluarga" value="{{ old('tunjangan_keluarga') }}">
+                                    <input id="tunjangan_keluarga" type="text" class="form-control Dstunjangan_keluarga" placeholder="Input Tunjangan Keluarga" @error('tunjangan_keluarga') is-invalid @enderror name="tunjangan_keluarga" value="{{ $Option->tunjangan_keluarga }}" readonly>
                                     @error('tunjangan_keluarga')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Uang Makan</label>
-                                    <input id="uang_makan" type="text" class="form-control Dsuang_makan" @error('uang_makan') is-invalid @enderror placeholder="Input uang_makan" name="uang_makan" value="{{ old('uang_makan') }}">
+                                    <input id="uang_makan" type="text" class="form-control Dsuang_makan" @error('uang_makan') is-invalid @enderror placeholder="Input uang_makan" name="uang_makan" value="{{ old('uang_makan') }}" readonly>
                                     @error('uang_makan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
@@ -87,19 +101,19 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Persen Pot Pph</label>
-                                    <input id="persen_pot_pph" type="text" class="form-control" placeholder="Input Persen" @error('persen_pot_pph') is-invalid @enderror name="persen_pot_pph" value="{{ old('persen_pot_pph') }}">
+                                    <input id="persen_pot_pph" type="text" class="form-control Dspersen_pot_pph" placeholder="Input Persen" @error('persen_pot_pph') is-invalid @enderror name="persen_pot_pph" value="{{ $Option->persen_pot_pph }}" readonly>
                                     @error('persen_pot_pph')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>PTKP</label>
-                                    <input id="ptkp" type="text" class="form-control" placeholder="Input ptkp" @error('ptkp') is-invalid @enderror name="ptkp" value="{{ old('ptkp') }}">
+                                    <input id="ptkp" type="text" class="form-control Dsptkp" placeholder="Input ptkp" @error('ptkp') is-invalid @enderror name="ptkp" value="{{ $Option->ptkp }}" readonly>
                                     @error('ptkp')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Persen Pot Jamsostek</label>
-                                    <input id="persen_pot_jamsostek" type="text" class="form-control" placeholder="Input Jamsostek" @error('persen_pot_jamsostek') is-invalid @enderror name="persen_pot_jamsostek" value="{{ old('persen_pot_jamsostek') }}">
+                                    <input id="persen_pot_jamsostek" type="text" class="form-control Dspersen_jamsostek" placeholder="Input Jamsostek" @error('persen_pot_jamsostek') is-invalid @enderror name="persen_pot_jamsostek" value="{{ $Option->persen_jamsostek }}" readonly>
                                     @error('persen_pot_jamsostek')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
@@ -111,19 +125,19 @@
 
                                 <div class="form-group form-group-default">
                                     <label>nama Jabatan</label>
-                                    <input id="nama_jabatan" type="text" class="form-control Dsnama_jabatan" @error('nama_jabatan') is-invalid @enderror placeholder="Input Nama Jabatan" name="nama_jabatan" value="{{ old('nama_jabatan') }}">
+                                    <input id="nama_jabatan" type="text" class="form-control Dsnama_jabatan" @error('nama_jabatan') is-invalid @enderror placeholder="Input Nama Jabatan" name="nama_jabatan" value="{{ old('nama_jabatan') }}" readonly>
                                     @error('nama_jabatan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Nama Cabang</label>
-                                    <input id="nama_cabang" type="text" class="form-control Dsnama_cabang" @error('nama_cabang') is-invalid @enderror placeholder="Input Cabang" name="nama_cabang" value="{{ old('nama_cabang') }}">
+                                    <input id="nama_cabang" type="text" class="form-control Dsnama_cabang" @error('nama_cabang') is-invalid @enderror placeholder="Input Cabang" name="nama_cabang" value="{{ old('nama_cabang') }}" readonly>
                                     @error('nama_cabang')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
                                     <label>Nama Departemen</label>
-                                    <input id="nama_departemen" type="text" class="form-control Dsnama_departemen" @error('nama_departemen') is-invalid @enderror placeholder="Input Departemen" name="nama_departemen" value="{{ old('nama_departemen') }}">
+                                    <input id="nama_departemen" type="text" class="form-control Dsnama_departemen" @error('nama_departemen') is-invalid @enderror placeholder="Input Departemen" name="nama_departemen" value="{{ old('nama_departemen') }}" readonly>
                                     @error('nama_departemen')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
