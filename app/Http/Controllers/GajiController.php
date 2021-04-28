@@ -66,12 +66,12 @@ class GajiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function cekgaji()
-    {  
+    {
 
             $Slipgaji = DB::table('users as a')
             ->join('karyawan as c','a.nik','=','c.nik')
             ->join('gaji as b','b.nomor_induk','=','c.nomor_induk')
-            ->select('a.id','c.nama','b.nama_jabatan','b.bulan', 'b.tahun')
+            ->select('a.id','c.nama','b.nama_jabatan','b.bulan', 'b.tahun', 'c.nomor_induk')
              ->where('a.id','=',Auth::user()->id)->first();
         //    ->first();
                 //   dd($Slipgaji);

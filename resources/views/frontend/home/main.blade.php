@@ -59,7 +59,7 @@
     <!-- End About Section -->
 
     <!-- ======= Skills Section ======= -->
-    @include('frontend.home.skill')
+    {{-- @include('frontend.home.skill') --}}
     <!-- End Skills Section -->
 
     <!-- ======= Counts Section ======= -->
@@ -91,7 +91,7 @@
     <!-- End Pricing Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    @include('frontend.home.frequent')
+    {{-- @include('frontend.home.frequent') --}}
     <!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->

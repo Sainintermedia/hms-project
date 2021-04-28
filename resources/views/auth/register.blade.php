@@ -52,6 +52,18 @@
 
                         <div class="row px-3">
                             <label class="mb-1">
+                            <h6 class="mb-0 text-sm">Nik</h6>
+                            </label>
+                                <input id="nik" type="nik" class="form-control @error('nik') is-invalid @enderror" name="nik" value="{{ old('nik') }}" required autocomplete="nik">
+                                @error('nik')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+
+                        <div class="row px-3">
+                            <label class="mb-1">
                             <h6 class="mb-0 text-sm">E-Mail Address</h6>
                             </label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
