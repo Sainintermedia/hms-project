@@ -74,9 +74,9 @@ class GajiController extends Controller
             ->select('a.id','c.nama','b.nama_jabatan','b.bulan', 'b.tahun')
              ->where('a.id','=',Auth::user()->id)->first();
         //    ->first();
-                //   dd($Slipgaji);
+                  dd($Slipgaji);
             // Auth::user()->id)->get();
-             return view ('Transaksi.Gaji.slipgaji', compact ('Slipgaji'));
+            //  return view ('Transaksi.Gaji.slipgaji', compact ('Slipgaji'));
         }
     public function store(Request $request)
     {
