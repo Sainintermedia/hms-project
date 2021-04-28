@@ -16,7 +16,7 @@ class StandarController extends Controller
     public function index()
     {
         $Std = DB::table('standar')->get();
-        return view ('Standar.standar', compact ('Std'));
+        return view ('Pendukung.Standar.standar', compact ('Std'));
     }
 
     /**
@@ -26,7 +26,7 @@ class StandarController extends Controller
      */
     public function create()
     {
-        return view('Standar.standartambah');
+        return view('Pendukung.Standar.standartambah');
     }
 
     /**
@@ -42,7 +42,7 @@ class StandarController extends Controller
             'tahun'=> 'required',
             'jumlah_hari_kerja' => 'required'
             ]);
-    
+
             Standar::create($request->all());
             return redirect('/standar')->with('status','Data standar Berhasil Ditambahkan');
     }
@@ -67,7 +67,7 @@ class StandarController extends Controller
     public function edit($id)
     {
         $st = Standar::find($id);
-        return view('Standar.standaredit',compact('st'));
+        return view('Pendukung.Standar.standaredit',compact('st'));
     }
 
     /**

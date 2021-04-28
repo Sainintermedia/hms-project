@@ -31,6 +31,7 @@
 								<div class="card-header">
 
 									<a href="/karyawantambah" type="button" class="btn btn-primary btn-round">+ Data Karyawan</a>
+                                    <a href="/export_excel" class="btn btn-success btn-round"> <i class="fa fa-file-excel-o" aria-hidden="true"></i> Export Excel</a>
 									@if (session('status'))
 									<div class="alert alert-success">
 										{{ session('status') }}
@@ -45,6 +46,7 @@
 												<tr>
 													<th>No</th>
 													<th>No Induk</th>
+													<th>NIK</th>
 													<th>Nama</th>
 													<th>Tempat Lahir</th>
 													<th>Tanggal Lahir</th>
@@ -72,6 +74,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>No Induk</th>
+													<th>NIK</th>
 													<th>Nama</th>
 													<th>Tempat Lahir</th>
 													<th>Tanggal Lahir</th>
@@ -100,6 +103,7 @@
 												<tr>
 													<th scope="row">{{ $loop->iteration }}</th>
 													<td>{{$kry->nomor_induk}}</td>
+													<td>{{$kry->nik}}</td>
 													<td>{{$kry->nama}}</td>
 													<td>{{$kry->tempat_lahir}}</td>
 													<td>{{$kry->tanggal_lahir}}</td>

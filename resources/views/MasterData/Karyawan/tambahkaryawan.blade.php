@@ -43,6 +43,12 @@
                                 </div>
 
                                 <div class="form-group form-group-default">
+                                    <label>NIK</label>
+                                    <input id="nik" type="text" class="form-control" placeholder="Input NIK" @error('nik') is-invalid @enderror name="nik" value="{{ old('nik') }}">
+                                    @error('nik')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="form-group form-group-default">
                                     <label>Nama Lengkap</label>
                                     <input id="nama" type="text" class="form-control" placeholder="Input Nama Lengkap" @error('nama') is-invalid @enderror name="nama" value="{{ old('nama') }}">
                                     @error('nama')<div class="invalid-feedback">{{ $message }}</div>@enderror

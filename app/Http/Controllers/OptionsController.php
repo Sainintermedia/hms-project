@@ -16,7 +16,7 @@ class OptionsController extends Controller
     public function index()
     {
         $Opt = DB::table('options')->get();
-        return view ('Option.option', compact ('Opt'));
+        return view ('Pendukung.Option.option', compact ('Opt'));
     }
 
     /**
@@ -26,7 +26,7 @@ class OptionsController extends Controller
      */
     public function create()
     {
-        return view('Option.optiontambah');
+        return view('Pendukung.Option.optiontambah');
     }
 
     /**
@@ -42,9 +42,9 @@ class OptionsController extends Controller
             'ptkp'=> 'required',
             'persen_jamsostek'=> 'required',
             'tunjangan_keluarga' => 'required'
-    
+
             ]);
-    
+
             Options::create($request->all());
             return redirect('/option')->with('status','Data Options Berhasil Ditambahkan');
     }
@@ -69,7 +69,7 @@ class OptionsController extends Controller
     public function edit($id)
     {
         $op = Options::find($id);
-        return view('Option.optionedit',compact('op'));
+        return view('Pendukung.Option.optionedit',compact('op'));
     }
 
     /**

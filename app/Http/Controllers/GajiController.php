@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gaji;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\Karyawan;
+use App\Models\Gaji;
+use App\Models\karyawan;
+use App\Models\User;
+use Illuminate\Http\Request;
 use App\Models\Options;
 use App\Models\Cabang;
 use App\Models\Departemen;
@@ -21,7 +23,8 @@ class GajiController extends Controller
      */
     public function index()
     {
-        $Gaj = DB::table('gaji')->get();
+        $Gaj = DB::table('gaji as a')
+        ->get();
         return view ('Transaksi.Gaji.gaji', compact ('Gaj'));
     }
 
@@ -63,10 +66,18 @@ class GajiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function cekgaji()
-    {
-        // $Gaj = DB::table('gaji')->get();
-        return view ('Transaksi.Gaji.slipgaji');
-    }
+    {  
+
+            $Slipgaji = DB::table('users as a')
+            ->join('karyawan as c','a.nik','=','c.nik')
+            ->join('gaji as b','b.nomor_induk','=','c.nomor_induk')
+            ->select('a.id','c.nama','b.nama_jabatan','b.bulan', 'b.tahun')
+             ->where('a.id','=',Auth::user()->id)->first();
+        //    ->first();
+                  dd($Slipgaji);
+            // Auth::user()->id)->get();
+            //  return view ('Transaksi.Gaji.slipgaji', compact ('Slipgaji'));
+        }
     public function store(Request $request)
     {
         $request->validate([
