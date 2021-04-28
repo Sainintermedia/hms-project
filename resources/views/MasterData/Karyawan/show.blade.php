@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
-                                    <h5>
+                                    <h5 class="text-primary">
                                         {{ $karyawan->nama }}  
                                     </h5>
                                     <h6>
@@ -26,7 +26,7 @@
                                     <p class="proile-rating">NIK : <span>{{ $karyawan->nik}}</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Data Detil Karyawan</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Selanjutnya</a>
@@ -34,8 +34,16 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+
+                    <div class="form-button-action">
+                        <a href="/karyawanedit/{{$karyawan->id}}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                    <div class="form-button-action">
+                        <a href="/karyawanhapus/{{$karyawan->id}}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger btn-lg" data-original-title="Remove">
+                            <i class="fa fa-times" ></i>
+                        </a>
                     </div>
                 </div>
             
@@ -82,45 +90,44 @@
                                                 <p>{{ $karyawan->status_pernikahan}}</p>
                                             </div>
                                         </div>
-                            </div>
 
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Jumlah Anak</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>{{ $karyawan->jumlah_anak}}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Alamat</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>{{ $karyawan->alamat}}</p>
-                                    </div>
-                                </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Jumlah Anak</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->jumlah_anak}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Alamat</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->alamat}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nomor Telepon</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->nomor_telepon}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Pendidikan Terakhir</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->pendidikan_terakhir}}</p>
+                                            </div>
+                                        </div>
                                 
                     </div>
 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Nomor Telepon</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>{{ $karyawan->nomor_telepon}}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Pendidikan Terakhir</label>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p>{{ $karyawan->pendidikan_terakhir}}</p>
-                                    </div>
-                                </div>
+                                
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Kode Jabatan</label>
@@ -194,10 +201,10 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
+                                    {{-- <div class="col-md-12">
+                                        <label>Data Karyawan</label><br/>
+                                        <p>Detil Data Karyawan</p>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
