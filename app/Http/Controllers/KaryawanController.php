@@ -127,6 +127,7 @@ class KaryawanController extends Controller
 
         $kar = Karyawan::find($id);
         $kar->nomor_induk = $request->nomor_induk;
+        $kar->nik = $request->nik;
         $kar->nama = $request->nama;
         $kar->tempat_lahir = $request->tempat_lahir;
         $kar->tanggal_lahir = $request->tanggal_lahir;
