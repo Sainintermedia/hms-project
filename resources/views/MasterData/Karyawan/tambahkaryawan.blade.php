@@ -138,7 +138,7 @@
                                     <select class="form-control" name="kode_jabatan" id="kode_jabatan">
                                             <option selected>Cari Jabatan</option>
                                         @foreach ($jab as $jb)
-                                            <option value="{{ $jb->kode_jabatan }}">{{ $jb->nama_jabatan }}</option>
+                                            <option value="{{ $jb->kode_jabatan }}"> {{ $jb->nama_jabatan }}</option>
                                         @endforeach
                                     </select>
                                 </div>
