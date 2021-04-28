@@ -10,6 +10,7 @@ class Karyawan extends Model
     protected $table = 'karyawan';
     protected $fillable = [
         'nomor_induk',
+        'nik',
         'nama',
         'tempat_lahir',
         'tanggal_lahir',

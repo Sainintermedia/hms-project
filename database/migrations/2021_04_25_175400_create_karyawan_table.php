@@ -17,6 +17,7 @@ class CreateKaryawanTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nomor_induk',10,);
+            $table->string('nik',30,);
             $table->string('nama', 50);
             $table->string('tempat_lahir', 20);
             $table->date('tanggal_lahir');
