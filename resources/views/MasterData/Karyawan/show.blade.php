@@ -1,46 +1,209 @@
 @extends('layouts.master')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            <h1 class="mt-3">DETIL DATA KARYAWAN </h1>
-                    <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title text-bold"> {{ $karyawan->nomor_induk }} </h4><br>
-                        <h5 class="card-title mb-4 text-left"> {{ $karyawan->nama }}</h5>
-                        <h6 class="card-text mb-3 "><a class="text-bold">Tempat Lahir</a><span>:</span>{{ $karyawan->tempat_lahir }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Tanggal Lahir</a>: {{ $karyawan->tanggal_lahir }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Jenis Kelamin</a>: {{ $karyawan->jenis_kelamin }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Agama</a>: {{ $karyawan->agama }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Status Pernikahan</a>: {{ $karyawan->status_pernikahan }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Jumlah Anak</a>: {{ $karyawan->jumlah_anak }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Alamat</a>: {{ $karyawan->alamat }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">No Handphone</a>: {{ $karyawan->nomor_telepon }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Pendidikan Terakhir</a>: {{ $karyawan->pendidikan_terakhir }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Kode Jabatan</a>: {{ $karyawan->kode_jabatan }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Kode Cabang</a>: {{ $karyawan->kode_cabang }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Kode Departemen</a>: {{ $karyawan->kode_departemen }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Gaji Pokok</a>: {{ $karyawan->gaji_pokok }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Tanggal Diangkat</a>: {{ $karyawan->tanggal_diangkat }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Tanggal Keluar</a>: {{ $karyawan->tanggal_keluar }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Nama Bank</a>: {{ $karyawan->nama_bank }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Nomor Rekening</a>: {{ $karyawan->nomor_rekening }} </h6>
-                        <h6 class="card-text mb-3"><a class="text-bold">Rekening Atas Nama</a>: {{ $karyawan->rekening_atas_nama }} </h6>
 
-                        <div class="form-button-action">
-                            <a href="/karyawanedit/{{$karyawan->id}}" type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                <i class="fa fa-edit"></i>
-                            </a>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
                         </div>
-
-                        <div href="/karyawanhapus/{{$karyawan->id}}" type="button" data-toggle="tooltip"   title="" class="btn btn-link btn-danger delete-confirm"  data-original-title="Remove">
-                            <i class="fa fa-times" ></i>
-                        </div>
-
-                        <a href="/karyawan" class="card-link">Kembali</a>
                     </div>
-                    </div>  
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{ $karyawan->nama }}  
+                                    </h5>
+                                    <h6>
+                                        Nomor Rgistrasi : {{ $karyawan->nomor_induk}}
+                                    </h6>
+                                    <p class="proile-rating">NIK : <span>{{ $karyawan->nik}}</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Selanjutnya</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    </div>
+                </div>
+            
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Tempat Lahir</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->tempat_lahir}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Tanggal Lahir</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->tanggal_lahir}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Jenis Kelamin</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->jenis_kelamin}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Agama</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->agama}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Status Pernikahan</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{ $karyawan->status_pernikahan}}</p>
+                                            </div>
+                                        </div>
+                            </div>
 
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Jumlah Anak</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->jumlah_anak}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Alamat</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->alamat}}</p>
+                                    </div>
+                                </div>
+                                
+                    </div>
+
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nomor Telepon</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->nomor_telepon}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Pendidikan Terakhir</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->pendidikan_terakhir}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Kode Jabatan</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->kode_jabatan}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Kode Cabang</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->kode_cabang}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Kode Departemen</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->kode_departemen}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Gaji Pokok</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->gaji_pokok}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Tanggal Diangkat</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->tanggal_diangkat}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Tanggal Keluar</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->tanggal_keluar}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nama Bank</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->nama_bank}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nomor Rekening</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->nomor_rekening}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Rekening Atas Nama</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{ $karyawan->rekening_atas_nama}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Your Bio</label><br/>
+                                        <p>Your detail description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
         </div>
-</div>
 @endsection
+
