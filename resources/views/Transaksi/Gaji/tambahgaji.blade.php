@@ -101,8 +101,8 @@
 
                                 <div class="form-group form-group-default">
                                     <label>Persen Pot Pph</label>
-                                    <input id="persen_pot_pph" type="text" class="form-control Dspersen_pot_pph" placeholder="Input Persen" @error('persen_pot_pph') is-invalid @enderror name="persen_pot_pph" value="{{ $Option->persen_pot_pph }}" readonly>
-                                    @error('persen_pot_pph')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    <input id="persen_pph" type="text" class="form-control Dspersen_pph" placeholder="Input Persen" @error('persen_pph') is-invalid @enderror name="persen_pph" value="{{ $Option->persen_pph }}" readonly>
+                                    @error('persen_pph')<div class="invalid-feedback">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">

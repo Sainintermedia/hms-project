@@ -6,12 +6,17 @@
                 {{-- @foreach ($collection as $object)
         {{ $object->title }}
     @endforeach --}}
+
+@if ($Bulan== ['April', 'Mei', 'Juni', 'Juli'])
+
+I have multiple records!
+{{-- @elseif  ($Bulan=="April") --}}
                 <img class="card-img-top" img src="../assets/img/profile.jpg" alt="Card image cap">
                 <div class="card-body">
-
                 <h5 class="card-title">	{{ $Slipgaji->nama }}</h5>
                 <p class="card-text">Jabatan : {{ $Slipgaji->nama_jabatan }}</p>
                 <p class="card-text">Nomor Induk : {{ $Slipgaji->nomor_induk }}</p>
+                <p class="card-text">Jumlah : {{ $Slipgaji->bulan }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item">Cras justo odio</li>
@@ -23,5 +28,9 @@
                 </div>
                 {{-- @endforeach --}}
             </div>
+@else
+tidak gajian
+@endif
+
 
   @endsection

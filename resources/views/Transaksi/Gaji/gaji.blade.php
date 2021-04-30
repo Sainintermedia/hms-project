@@ -103,7 +103,7 @@
 													<td>{{$gj->tunjangan_keluarga}}</td>
 													<td>{{$gj->uang_makan}}</td>
 													<td>{{$gj->uang_lembur}}</td>
-													<td>{{$gj->persen_pot_pph}}</td>
+													<td>{{$gj->persen_pph}}</td>
 													<td>{{$gj->ptkp}}</td>
 													<td>{{$gj->persen_pot_jamsostek}}</td>
 													<td>{{$gj->pot_lain_lain}}</td>

@@ -68,15 +68,17 @@ class GajiController extends Controller
     public function cekgaji()
     {
 
+        $Bulan = bulan(date('Y-m-d'));
             $Slipgaji = DB::table('users as a')
             ->join('karyawan as c','a.nik','=','c.nik')
             ->join('gaji as b','b.nomor_induk','=','c.nomor_induk')
             ->select('a.id','c.nama','b.nama_jabatan','b.bulan', 'b.tahun', 'c.nomor_induk')
-             ->where('a.id','=',Auth::user()->id)->first();
+             ->where('a.id','=',Auth::user()->id)
+             ->where('b.bulan', '=', $Bulan )->first();
         //    ->first();
                 //   dd($Slipgaji);
             // Auth::user()->id)->get();
-             return view ('Transaksi.Gaji.slipgaji', compact ('Slipgaji'));
+             return view ('Transaksi.Gaji.slipgaji', compact ('Slipgaji', 'Bulan'));
         }
     public function store(Request $request)
     {
@@ -89,7 +91,7 @@ class GajiController extends Controller
             'tunjangan_keluarga'=> 'required',
             'uang_makan'=> 'required',
             'uang_lembur'=> 'required',
-            'persen_pot_pph'=> 'required',
+            'persen_pph'=> 'required',
             'ptkp'=> 'required',
             'persen_pot_jamsostek'=> 'required',
             'pot_lain_lain'=> 'required',
@@ -146,7 +148,7 @@ class GajiController extends Controller
         $gaj->tunjangan_keluarga = $request->tunjangan_keluarga;
         $gaj->uang_makan = $request->uang_makan;
         $gaj->uang_lembur = $request->uang_lembur;
-        $gaj->persen_pot_pph = $request->persen_pot_pph;
+        $gaj->persen_pph = $request->persen_pph;
         $gaj->ptkp = $request->ptkp;
         $gaj->persen_pot_jamsostek = $request->persen_pot_jamsostek;
         $gaj->pot_lain_lain = $request->pot_lain_lain;

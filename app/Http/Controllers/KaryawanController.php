@@ -83,7 +83,7 @@ class KaryawanController extends Controller
         $request->validate([
 
         'nomor_induk' => 'required|max:10',
-        'nik' => 'required|max:20',
+        'nik' => ['required', 'min:16', 'max:16'],
         'nama' => 'required',
         'tempat_lahir' => 'required',
         'tanggal_lahir' => 'required',
@@ -92,7 +92,7 @@ class KaryawanController extends Controller
         'status_pernikahan' => 'required',
         'jumlah_anak' => 'required',
         'alamat' => 'required',
-        'nomor_telepon' => 'required',
+        'nomor_telepon' => ['required', 'min:11', 'max:14'],
         'pendidikan_terakhir' => 'required',
         'kode_jabatan' => 'required',
         'kode_cabang' => 'required',
