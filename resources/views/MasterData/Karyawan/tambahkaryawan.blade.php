@@ -45,7 +45,7 @@
                                 <div class="form-group form-group-default">
                                     <label>NIK</label>
                                     <input id="nik" type="text" class="form-control" placeholder="Input NIK" @error('nik') is-invalid @enderror name="nik" value="{{ old('nik') }}">
-                                    @error('nik')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                                    @error('nik')<div class="invalid-feedback" role="alert">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="form-group form-group-default">
